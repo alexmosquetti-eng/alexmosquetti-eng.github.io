@@ -314,6 +314,27 @@ main>section{min-height:calc(100svh - var(--nav))}
 .scene .credit{position:absolute;right:max(24px,env(safe-area-inset-right,0px));bottom:16px;margin:0}
 .scene-in{position:static}.scene .wrap{position:relative;width:100%;padding-left:max(24px,5vw,env(safe-area-inset-left,0px));padding-right:max(24px,5vw,env(safe-area-inset-right,0px))}
 .credit a{text-decoration:none;border-bottom:1px solid var(--rule-night)}
+@media (max-width:640px){
+  .scene>img,.scene .slides{inset:0 0 auto 0;height:56svh}
+  .scene:after{background:linear-gradient(180deg,rgba(5,15,27,.72) 0,rgba(5,15,27,.1) 12svh,rgba(5,15,27,.22) 22svh,rgba(5,15,27,.62) 32svh,rgba(5,15,27,.92) 47svh,#07131F 56svh,#07131F 100%)}
+  .scene-copy,.scene-top{text-shadow:0 1px 10px rgba(5,15,27,.85),0 0 2px rgba(5,15,27,.6)}
+  .scene-in{padding-block:26px 76px;gap:16px}
+  .scene-top{font-size:10.5px;letter-spacing:.08em}
+  .scene-top>span:last-child{text-align:right}
+  .scene-copy{margin-top:16svh}
+  .scene-copy h2{font-size:clamp(34px,10.4vw,42px);margin:8px 0 8px}
+  #pvCaption{display:block;font-size:10.5px;letter-spacing:.05em;line-height:1.55;max-width:34ch;color:#FFC233}
+  .scene .ledger{gap:2px}
+  .lg{padding:10px 0 12px;gap:4px 22px}
+  .lg h3{font-size:10.5px;letter-spacing:.08em}
+  .lg-hero .lg-v{font-size:clamp(42px,12.5vw,54px)}
+  .lg-v{font-size:clamp(30px,8.6vw,38px)}
+  .lg-m{gap:8px 22px}
+  .lg-m.row3{gap:8px 22px}
+  .lg-m.row3 .lg-v{font-size:clamp(32px,9.4vw,42px)}
+  .lg-l{font-size:10px;letter-spacing:.06em;margin-top:4px}
+  .scene .credit{bottom:10px;font-size:8.5px}
+}
 @media (max-width:860px){.lg{grid-template-columns:1fr}.lg-m{grid-template-columns:repeat(3,minmax(0,1fr))}.lg-m.row3{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 18px}.lg-m.row3 .lg-v{font-size:clamp(32px,9vw,52px)}.lg-hero .lg-v{font-size:clamp(52px,14vw,80px)}.lg-v{font-size:clamp(32px,9vw,48px)}}
 
 /* CAREER */
@@ -510,7 +531,7 @@ a.clink:hover .arr{transform:translateX(5px)}
 @media (max-width:900px){.tb,.tb-more{grid-template-columns:1fr}.tb-hero,.tb-hero+.tb-hero{padding:24px 0;border-left:0;border-bottom:1px solid var(--rule)}}
 
 /* BESS · ultrawide 21:9 — everything on one screen */
-@media (min-width:1500px) and (min-aspect-ratio:2/1){
+@media (min-width:1500px) and (min-aspect-ratio:11/5){
   #bess>.wrap{width:100%;padding-left:max(24px,4vw);padding-right:max(24px,4vw)}
   .bess-in{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.25fr) minmax(0,1.05fr);column-gap:clamp(28px,2.4vw,52px);row-gap:10px;height:calc(100svh - var(--nav));min-height:900px;padding-block:44px 32px;
     grid-template-areas:"top top top" "copy bar chart" "copy note chart" "copy days chart" "specs b3 pay" "annual b3 pay";grid-template-rows:auto auto auto auto minmax(0,1fr) auto}
@@ -525,7 +546,7 @@ a.clink:hover .arr{transform:translateX(5px)}
   .b-annual dl{margin-top:0;border-top:0}
 }
 /* BESS · 16:9 — full width, larger 3D next to the chart */
-@media (min-width:1100px) and (min-aspect-ratio:3/2) and (max-aspect-ratio:2/1){
+@media (min-width:1100px) and (min-aspect-ratio:3/2) and (max-aspect-ratio:11/5){
   #bess>.wrap{width:100%;padding-left:max(24px,4vw);padding-right:max(24px,4vw)}
   .b-lab{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)}
   .b3{min-height:min(62vh,660px)}
@@ -779,7 +800,7 @@ a.clink:hover .arr{transform:translateX(5px)}
       <div class="b-annual">
         <span class="eyebrow" data-en="Self-consumption · simulated year" data-pt="Autoconsumo · ano simulado" data-es="Autoconsumo · año simulado">Self-consumption · simulated year</span>
         <dl>
-          <div><dd><span class="num" data-n="4339" data-d="0">4,339</span><small>kWh/yr</small></dd><dt data-en="PV production" data-pt="Produção FV" data-es="Producción FV">PV production</dt></div>
+          <div><dd><span class="num" data-n="4339" data-d="0">4,339</span><small data-en="kWh/yr" data-pt="kWh/ano" data-es="kWh/año">kWh/yr</small></dd><dt data-en="PV production" data-pt="Produção FV" data-es="Producción FV">PV production</dt></div>
           <div><dd><span class="num" data-n="1592" data-d="0">1,592</span><small>kWh/kWp</small></dd><dt data-en="Specific yield" data-pt="Produtividade específica" data-es="Productividad específica">Specific yield</dt></div>
           <div><dd><span class="num" data-n="74.96" data-d="2">74.96</span><small>%</small></dd><dt data-en="Performance ratio" data-pt="Performance ratio" data-es="Performance ratio">Performance ratio</dt></div>
           <div><dd><span class="num" data-n="95.5" data-d="1">95.5</span><small>%</small></dd><dt data-en="Battery round-trip" data-pt="Eficiência da bateria" data-es="Eficiencia de la batería">Battery round-trip</dt></div>
@@ -828,7 +849,7 @@ a.clink:hover .arr{transform:translateX(5px)}
 </section>
 <section class="scene scene--ev" id="ev"><img src="assets/ev-charging-real.webp" alt="Electric vehicle at a public charging station" loading="lazy">
   <div class="wrap scene-in">
-    <div class="scene-top"><span data-en="05 — Project archive" data-pt="05 — Acervo de projetos" data-es="05 — Archivo de proyectos">05 — Project archive</span><span>03 · EV charging</span></div>
+    <div class="scene-top"><span data-en="05 — Project archive" data-pt="05 — Acervo de projetos" data-es="05 — Archivo de proyectos">05 — Project archive</span><span data-en="04 · EV charging" data-pt="04 · Recarga de VE" data-es="04 · Recarga de VE">04 · EV charging</span></div>
     <div class="scene-copy"><span class="eyebrow" style="color:#5FE0BD" data-en="EV infrastructure" data-pt="Infraestrutura de recarga" data-es="Infraestructura de recarga">EV infrastructure</span><h2 data-en="Charging,<br>engineered for every building." data-pt="Recarga,<br>projetada para cada edificação." data-es="Recarga,<br>diseñada para cada edificio.">Charging,<br>engineered for every building.</h2></div>
     <div class="ledger ledger--row">
       <div class="lg"><h3 data-en="EV charging portfolio" data-pt="Portfólio de recarga de VE" data-es="Portafolio de recarga de VE">EV charging portfolio</h3><div class="lg-m row3">
@@ -1156,7 +1177,7 @@ $$('.scene>img').forEach(img=>{const drop=()=>img.remove();img.addEventListener(
 /* ---------- PV SLIDES (from the Mídia sheet) ---------- */
 const SL=D.pvSlides||[];let si=0;const pad2=n=>String(n).padStart(2,'0');
 function renderSlides(){$('#pvSlides').innerHTML=SL.map((x,i)=>`<img src="${esc(x.src)}" alt="${esc(L(x.alt))}" style="object-position:${esc(x.pos||'62% 50%')}" class="${i===si?'on':''}"${i?' loading="lazy"':''}>`).join('');$('#pvPrev').disabled=$('#pvNext').disabled=SL.length<2}
-function updateSlide(slow){$('#pvSlides').classList.toggle('slow',!!slow);$$('#pvSlides img').forEach((im,i)=>im.classList.toggle('on',i===si));const x=SL[si];if(!x)return;const cap=$('#pvCaption');if(slow){cap.classList.add('fade');setTimeout(()=>{cap.textContent=L(x.caption);cap.classList.remove('fade')},900)}else cap.textContent=L(x.caption);$('#pvCount').textContent=`${pad2(si+1)} / ${pad2(SL.length)} · Solar PV`;$('#pvCredit').textContent=x.credit||''}
+function updateSlide(slow){$('#pvSlides').classList.toggle('slow',!!slow);$$('#pvSlides img').forEach((im,i)=>im.classList.toggle('on',i===si));const x=SL[si];if(!x)return;const cap=$('#pvCaption');if(slow){cap.classList.add('fade');setTimeout(()=>{cap.textContent=L(x.caption);cap.classList.remove('fade')},900)}else cap.textContent=L(x.caption);$('#pvCount').textContent=`${pad2(si+1)} / ${pad2(SL.length)} · ${LANG==='en'?'Solar PV':'Solar FV'}`;$('#pvCredit').textContent=x.credit||''}
 let pvT=0,pvVis=false;const pvAuto=(delay)=>{clearTimeout(pvT);if(SL.length<2||!pvVis)return;pvT=setTimeout(()=>{si=(si+1)%SL.length;updateSlide(true);pvAuto(5000)},delay)};
 $('#pvPrev').onclick=()=>{si=(si-1+SL.length)%SL.length;updateSlide();pvAuto(5000)};$('#pvNext').onclick=()=>{si=(si+1)%SL.length;updateSlide();pvAuto(5000)};
 new IntersectionObserver(es=>es.forEach(e=>{pvVis=e.isIntersecting;if(pvVis)pvAuto(3000+5000);else clearTimeout(pvT)}),{threshold:.3}).observe($('#solar'));
@@ -1206,7 +1227,7 @@ function bMorph(){
   cAnim=requestAnimationFrame(f);
 }
 function drawChart(){
-  const box=$('#bChart'),Wd=Math.max(300,box.clientWidth),UW=matchMedia('(min-width:1500px) and (min-aspect-ratio:2/1)').matches,Ht=Math.round(Math.min(UW?innerHeight*.3:420,Math.max(UW?220:280,Wd*.5))),m={l:46,r:40,t:30,b:28},iw=Wd-m.l-m.r,ih=Ht-m.t-m.b,sl=iw/24;
+  const box=$('#bChart'),Wd=Math.max(300,box.clientWidth),UW=matchMedia('(min-width:1500px) and (min-aspect-ratio:11/5)').matches,Ht=Math.round(Math.min(UW?innerHeight*.3:420,Math.max(UW?220:280,Wd*.5))),m={l:46,r:40,t:30,b:28},iw=Wd-m.l-m.r,ih=Ht-m.t-m.b,sl=iw/24;
   const X=i=>m.l+sl*(i+.5),Y=v=>m.t+ih-(v/cvMax)*ih,Ys=v=>m.t+ih-v*ih;
   const st=cvMax>3000?1000:500;let g='';
   for(let v=0;v<=cvMax+1;v+=st){g+=`<line class="gl" x1="${m.l}" x2="${m.l+iw}" y1="${Y(v)}" y2="${Y(v)}"/><text class="ax" x="${m.l-8}" y="${Y(v)+4}" text-anchor="end">${nf(v/1000,1)}</text>`}
@@ -1506,7 +1527,7 @@ function initCB(){
     while(k<N){const x=-140+rnd()*280,z=-90+rnd()*100;if(z>-38&&z<-22)continue;if(z>-21&&z<-16)continue;if(x>X0-4&&x<X1+4&&z>Z0-4&&z<Z1+4)continue;if(z>12)continue;
       const s=1+rnd()*1.6,h=1.2+rnd()*.8;o.rotation.set(0,rnd()*6,0);o.position.set(x,h/2,z);o.scale.set(1,h,1);o.updateMatrix();trunkI.setMatrixAt(k,o.matrix);
       [[0,0,0,1],[.5*s,-.3*s,.3*s,.7]].forEach(([dx,dy,dz,f])=>{o.position.set(x+dx,h+s*.75+dy,z+dz);o.scale.set(s*f*1.05,s*f*.9,s*f);o.updateMatrix();const I=f===1?canI:canJ;I.setMatrixAt(k,o.matrix);col.setHSL(.26+rnd()*.06,.45+rnd()*.15,.26+rnd()*.1);I.setColorAt(k,col)});k++}
-    canI.castShadow=canJ.castShadow=true;S.add(trunkI,canI,canJ)}
+    trunkI.castShadow=canI.castShadow=canJ.castShadow=true;S.add(trunkI,canI,canJ)}
 
   /* ---------- mobile crane: carrier, outriggers, slewing superstructure, telescopic luffing boom ---------- */
   const yel=M(0xF2B705,{metalness:.25,roughness:.45}),dark=M(0x2b333d,{metalness:.3,roughness:.5}),CR=new T.Vector3(3.5,0,-6.8);
@@ -1692,11 +1713,10 @@ function setLang(l){
   $$('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===LANG));
   $('#heroRole').textContent=L(D.profile.headline);$('#heroLede').textContent=L(D.profile.positioning);$('#avail').textContent=L(D.profile.availability);
   if(D.profile.cvPublic)$$('.cv-link').forEach(a=>a.href='cv/'+encodeURIComponent(D.profile.cv[LANG]));
-  try{localStorage.setItem('lang',LANG)}catch(_){}
   renderCases();renderCareer();renderStd();renderEdu();drawStates();crumb();legend();renderPanel();updateSlide();bLang();
   $$('.counted').forEach(settleCounters);
 }
-$$('.lang button').forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
+$$('.lang button').forEach(b=>b.onclick=()=>{setLang(b.dataset.lang);try{localStorage.setItem('lang-choice',LANG)}catch(_){}});
 
 /* ---------- REVEAL + COUNTERS (archive scenes re-count every time they come into view) ---------- */
 const io=new IntersectionObserver(es=>es.forEach(e=>{const el=e.target;
@@ -1730,7 +1750,8 @@ addEventListener('touchend',()=>touchY=null,{passive:true});
 $$('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const h=a.getAttribute('href'),target=h==='#top'?panels[0]:document.querySelector(h);if(target&&panels.includes(target)){e.preventDefault();$('#navlinks').classList.remove('open');goPanel(target)}}));
 const mb=$('#menuBtn'),nl=$('#navlinks');mb.onclick=()=>{const o=nl.classList.toggle('open');mb.setAttribute('aria-expanded',o)};
 
-let saved='en';try{saved=localStorage.getItem('lang')||'en'}catch(_){}
+const sysLang=()=>{for(const l of (navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||'en'])){const c=String(l).toLowerCase().slice(0,2);if(c==='pt'||c==='es'||c==='en')return c}return 'en'};
+let saved=sysLang();try{const c=localStorage.getItem('lang-choice');if(c)saved=c;localStorage.removeItem('lang')}catch(_){}
 if(!D.profile.cvPublic){$$('.cv-link').forEach(a=>{a.href=D.profile.linkedin;a.removeAttribute('download');a.target='_blank';a.rel='noopener'});
   const tb=$('.topbar .cv-link');if(tb)tb.textContent='LinkedIn';const hs=$('.hero .cv-link span[data-en]');if(hs){hs.dataset.en='LinkedIn profile';hs.dataset.pt='Perfil no LinkedIn';hs.dataset.es='Perfil en LinkedIn';const ar=hs.parentNode.querySelector('.arr');if(ar)ar.textContent='↗'}}
 setLang(saved);setVB(brView());
