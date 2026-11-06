@@ -145,6 +145,20 @@ main>section{min-height:calc(100svh - var(--nav))}
 .act .num small{font:500 .24em var(--mono);color:var(--muted);margin-left:8px;letter-spacing:.04em;white-space:normal}
 .act .cap{font-size:13.5px;color:var(--muted)}
 .act .bar{height:3px;width:56px}
+.uts{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:14px 40px;border-top:1px solid var(--rule);margin-top:36px;padding:26px 0 0}
+.uts-k{font:500 11.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);max-width:16ch;line-height:1.5}
+.uts-l{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px 34px}
+.uts-l li{display:flex;align-items:center}
+.uts-l img{display:block;width:auto;max-width:180px;filter:brightness(0);opacity:.5;transition:filter .9s var(--ease),opacity .9s var(--ease)}
+.uts.lit .uts-l img{filter:none;opacity:1;transition-duration:.45s}
+.uts-l li:hover img,.uts-l li:focus-within img{filter:none;opacity:1;transition-duration:.35s}
+.uts-n{font:500 12px var(--mono);letter-spacing:.06em;color:var(--ink2);text-align:right;line-height:1.5;white-space:nowrap}
+.uts-n>span{display:block}
+.uts-n b{display:block;font:700 30px var(--display);font-stretch:85%;letter-spacing:0;color:var(--ink)}
+.uts-note{grid-column:1/-1;margin:2px 0 0;font-size:11.5px;color:var(--muted);max-width:none}
+@media (max-width:1100px){.uts{grid-template-columns:1fr auto}.uts-l{grid-column:1/-1;grid-row:2}.uts-note{grid-row:3}}
+@media (max-width:860px){.uts{margin-top:0;border-top:0;padding-top:28px}}
+@media (max-width:600px){.uts{grid-template-columns:1fr;gap:14px}.uts-n{text-align:left;grid-row:auto;order:-1;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}.uts-n>span{display:inline}.uts-k{order:-2;max-width:none}.uts-l{grid-row:auto}.uts-note{grid-row:auto}.uts-l{justify-content:flex-start;gap:16px 26px}.uts-l img{max-width:120px;transform:scale(.86);transform-origin:left center}}
 @media (max-width:860px){.acts{grid-template-columns:1fr}.act,.act+.act{padding:26px 0;border-left:0;border-bottom:1px solid var(--rule)}}
 
 /* RESULTS */
@@ -697,6 +711,7 @@ a.clink:hover .arr{transform:translateX(5px)}
       <article class="act"><div class="step"><span class="eyebrow">II</span><span class="bar" style="background:var(--grid)"></span></div><h3 data-en="Built" data-pt="Construir" data-es="Construir">Built</h3><p data-en="IFC packages a contractor can build and buy from: single-line diagrams, cable and protection sizing, grounding, routing and the bill of materials." data-pt="Projetos executivos com que a obra constrói e compra: unifilares, dimensionamento de cabos e proteções, aterramento, encaminhamentos e lista de materiais." data-es="Proyectos ejecutivos con los que la obra construye y compra: unifilares, dimensionamiento de cables y protecciones, puesta a tierra, trazados y lista de materiales.">IFC packages a contractor can build and buy from: single-line diagrams, cable and protection sizing, grounding, routing and the bill of materials.</p><div class="num"><span class="count" data-to="117">0</span><small data-en="projects" data-pt="projetos" data-es="proyectos">projects</small></div><span class="cap" data-en="43.0 MW AC · 12 states" data-pt="43,0 MW CA · 12 estados" data-es="43,0 MW CA · 12 estados">43.0 MW AC · 12 states</span></article>
       <article class="act"><div class="step"><span class="eyebrow">III</span><span class="bar" style="background:var(--volt)"></span></div><h3 data-en="Accepted" data-pt="Entregar" data-es="Entregar">Accepted</h3><p data-en="Plants commissioned and generating, EV chargers in daily use, and utility tools a team now runs every morning." data-pt="Usinas comissionadas e gerando, carregadores de VE em uso diário e ferramentas que uma equipe da distribuidora usa todas as manhãs." data-es="Plantas en operación y generando, cargadores de VE en uso diario y herramientas que un equipo de la distribuidora usa cada mañana.">Plants commissioned and generating, EV chargers in daily use, and utility tools a team now runs every morning.</p><div class="num">~<span class="count" data-to="112">0</span><small data-en="GWh/yr" data-pt="GWh/ano" data-es="GWh/año">GWh/yr</small></div><span class="cap" data-en="estimated from 74.3 MWp delivered" data-pt="estimado a partir de 74,3 MWp entregues" data-es="estimado a partir de 74,3 MWp entregados">estimated from 74.3 MWp delivered</span></article>
     </div>
+    <div class="uts" aria-label="Distribution utilities"><span class="uts-k" data-en="Submitted and approved with" data-pt="Submetido e aprovado em" data-es="Presentado y aprobado en">Submitted and approved with</span><ul class="uts-l"><li title="Enel Ceará · Enel Rio · Enel São Paulo"><img src="assets/logos/enel.png" alt="Enel" height="53" style="height:53px" loading="lazy" decoding="async"></li><li title="CEMAR (MA) · CEPISA (PI) · CEEE (RS) · Equatorial"><img src="assets/logos/equatorial.png" alt="Equatorial" height="46" style="height:46px" loading="lazy" decoding="async"></li><li title="Energisa"><img src="assets/logos/energisa.png" alt="Energisa" height="40" style="height:40px" loading="lazy" decoding="async"></li><li title="Cemig (MG)"><img src="assets/logos/cemig.svg" alt="Cemig" height="35" style="height:35px" loading="lazy" decoding="async"></li><li title="Amazonas Energia (AM)"><img src="assets/logos/amazonas-energia.png" alt="Amazonas Energia" height="42" style="height:42px" loading="lazy" decoding="async"></li></ul><span class="uts-n"><b>10</b><span data-en="distribution utilities" data-pt="distribuidoras" data-es="distribuidoras">distribution utilities</span><span data-en="in 11 states" data-pt="em 11 estados" data-es="en 11 estados">in 11 states</span></span><p class="uts-note" data-en="Logos are trademarks of their respective owners, shown only to identify the utilities that reviewed and approved my grid-connection submittals. No affiliation or endorsement implied." data-pt="As marcas pertencem aos seus titulares e aparecem só para identificar as distribuidoras que analisaram e aprovaram meus projetos de conexão. Sem vínculo ou endosso." data-es="Las marcas pertenecen a sus titulares y se muestran solo para identificar a las distribuidoras que revisaron y aprobaron mis proyectos de conexión. Sin vínculo ni respaldo.">Logos are trademarks of their respective owners, shown only to identify the utilities that reviewed and approved my grid-connection submittals. No affiliation or endorsement implied.</p></div>
   </div>
 </section>
 
@@ -714,7 +729,7 @@ a.clink:hover .arr{transform:translateX(5px)}
 
 <section class="band" id="atlas">
   <div class="wrap">
-    <div class="head"><span class="eyebrow eyebrow--sun" data-en="03 — Project map" data-pt="03 — Mapa de projetos" data-es="03 — Mapa de proyectos">03 — Project map</span><h2 data-en="Designed<br>across Brazil." data-pt="Projetos por<br>todo o Brasil." data-es="Proyectos en<br>todo Brasil.">Designed<br>across Brazil.</h2><p data-en="Select a state to bring it forward and reveal every municipality with delivered work. Scroll to zoom, drag to move." data-pt="Selecione um estado para trazê-lo à frente e ver cada município com projetos entregues. Role para dar zoom, arraste para mover." data-es="Seleccione un estado para traerlo al frente y ver cada municipio con proyectos. Desplace para hacer zoom, arrastre para mover.">Select a state to bring it forward and reveal every municipality with delivered work. Scroll to zoom, drag to move.</p></div>
+    <div class="head"><span class="eyebrow eyebrow--sun" data-en="03 — Project map" data-pt="03 — Mapa de projetos" data-es="03 — Mapa de proyectos">03 — Project map</span><h2 data-en="Designed<br>across Brazil." data-pt="Projetos por<br>todo o Brasil." data-es="Proyectos en<br>todo Brasil.">Designed<br>across Brazil.</h2><p data-en="Select a state to bring it forward and reveal every city with delivered work. Scroll to zoom, drag to move." data-pt="Selecione um estado para trazê-lo à frente e ver cada município com projetos entregues. Role para dar zoom, arraste para mover." data-es="Seleccione un estado para traerlo al frente y ver cada municipio con proyectos. Desplace para hacer zoom, arrastre para mover.">Select a state to bring it forward and reveal every municipality with delivered work. Scroll to zoom, drag to move.</p></div>
     <div class="atlas-bar">
       <div class="tabs" id="fType"><span class="eyebrow" data-en="Technology" data-pt="Tecnologia" data-es="Tecnología">Technology</span><button data-v="all" aria-pressed="true" data-en="All" data-pt="Todos" data-es="Todos">All</button><button data-v="pv" aria-pressed="false"><svg class="ico ico--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M5.3 18.7 7 17M17 7l1.7-1.7"/></svg><span data-en="Solar PV" data-pt="Solar FV" data-es="Solar FV">Solar PV</span></button><button data-v="ev" aria-pressed="false"><svg class="ico ico--plug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4.7 9.2Q5.2 6.4 7.9 6.4h8.2q2.7 0 3.2 2.8A7.6 7.6 0 1 1 4.7 9.2Z"/><g fill="currentColor" stroke="none"><circle cx="9.3" cy="9.6" r="1"/><circle cx="14.7" cy="9.6" r="1"/><circle cx="7.4" cy="13" r="1"/><circle cx="12" cy="13" r="1"/><circle cx="16.6" cy="13" r="1"/><circle cx="9.6" cy="16.6" r="1.25"/><circle cx="14.4" cy="16.6" r="1.25"/></g></svg><span data-en="EV charging" data-pt="Recarga VE" data-es="Recarga VE">EV charging</span></button></div>
       <div class="tabs" id="fScope"><span class="eyebrow" data-en="Scope" data-pt="Escopo" data-es="Alcance">Scope</span><button data-v="all" aria-pressed="true" data-en="All" data-pt="Todos" data-es="Todos">All</button><button data-v="ifc" aria-pressed="false" data-en="IFC packages" data-pt="Projetos executivos" data-es="Proyectos ejecutivos">IFC packages</button><button data-v="grid" aria-pressed="false" data-en="Grid connection" data-pt="Conexão à rede" data-es="Conexión a red">Grid connection</button><button data-v="sim" aria-pressed="false" data-en="Simulation &amp; budget" data-pt="Simulação e orçamento" data-es="Simulación y presupuesto">Simulation &amp; budget</button></div>
@@ -971,17 +986,17 @@ const locN=v=>LANG==='en'?String(v):String(v).replace(/(\d)\.(\d)/g,'$1,$2'),loc
 const T={
  project:{en:'project',pt:'projeto',es:'proyecto'},projects:{en:'projects',pt:'projetos',es:'proyectos'},
  Project:{en:'Project',pt:'Projeto',es:'Proyecto'},Projects:{en:'Projects',pt:'Projetos',es:'Proyectos'},
- municipality:{en:'municipality',pt:'município',es:'municipio'},municipalities:{en:'municipalities',pt:'municípios',es:'municipios'},
+ municipality:{en:'city',pt:'município',es:'municipio'},municipalities:{en:'cities',pt:'municípios',es:'municipios'},
  state:{en:'state',pt:'estado',es:'estado'},states:{en:'states',pt:'estados',es:'estados'},
  brazil:{en:'Brazil',pt:'Brasil',es:'Brasil'},back:{en:'Back',pt:'Voltar',es:'Volver'},
- byState:{en:'By state',pt:'Por estado',es:'Por estado'},byMun:{en:'By municipality',pt:'Por município',es:'Por municipio'},
+ byState:{en:'By state',pt:'Por estado',es:'Por estado'},byMun:{en:'By city',pt:'Por município',es:'Por municipio'},
  list:{en:'Projects here',pt:'Projetos aqui',es:'Proyectos aquí'},none:{en:'No projects for the current filter.',pt:'Nenhum projeto para o filtro atual.',es:'Ningún proyecto para el filtro actual.'},
- portfolio:{en:'Project portfolio',pt:'Portfólio de projetos',es:'Portafolio de proyectos'},stateLbl:{en:'State',pt:'Estado',es:'Estado'},munLbl:{en:'Municipality',pt:'Município',es:'Municipio'},
+ portfolio:{en:'Project portfolio',pt:'Portfólio de projetos',es:'Portafolio de proyectos'},stateLbl:{en:'State',pt:'Estado',es:'Estado'},munLbl:{en:'City',pt:'Município',es:'Municipio'},
  pv:{en:'Solar PV',pt:'Solar FV',es:'Solar FV'},ev:{en:'EV charging',pt:'Recarga VE',es:'Recarga VE'},both:{en:'PV + EV',pt:'FV + VE',es:'FV + VE'},
  pvCap:{en:'Solar PV capacity',pt:'Potência solar FV',es:'Potencia solar FV'},pvN:{en:'Solar PV projects',pt:'Projetos solares FV',es:'Proyectos solares FV'},evCap:{en:'EV charging capacity',pt:'Potência de recarga VE',es:'Potencia de recarga VE'},evN:{en:'EV charging projects',pt:'Projetos de recarga VE',es:'Proyectos de recarga VE'},
- chargers:{en:'chargers',pt:'carregadores',es:'cargadores'},noMun:{en:'Municipality not identified',pt:'Município não identificado',es:'Municipio no identificado'},utility:{en:'Utility',pt:'Distribuidora',es:'Distribuidora'},
+ chargers:{en:'chargers',pt:'carregadores',es:'cargadores'},noMun:{en:'City not identified',pt:'Município não identificado',es:'Municipio no identificado'},utility:{en:'Utility',pt:'Distribuidora',es:'Distribuidora'},
  hintBR:{en:'Scroll to zoom · drag to pan · click a state',pt:'Role para zoom · arraste para mover · clique num estado',es:'Desplace para zoom · arrastre · clic en un estado'},
- hintUF:{en:'Click a municipality · scroll back to return',pt:'Clique num município · role para trás para voltar',es:'Clic en un municipio · desplace atrás para volver'},
+ hintUF:{en:'Click a city · scroll back to return',pt:'Clique num município · role para trás para voltar',es:'Clic en un municipio · desplace atrás para volver'},
  sc_ifc:{en:'IFC package',pt:'Projeto executivo',es:'Proyecto ejecutivo'},sc_grid:{en:'Grid connection',pt:'Conexão',es:'Conexión'},sc_sim:{en:'PVsyst simulation',pt:'Simulação PVsyst',es:'Simulación PVsyst'},sc_budget:{en:'Budget',pt:'Orçamento',es:'Presupuesto'},sc_elec:{en:'Electrical design',pt:'Projeto elétrico',es:'Proyecto eléctrico'},sc_ev:{en:'EV infrastructure',pt:'Infra de recarga',es:'Infra de recarga'},
  more:{en:'Role details',pt:'Detalhes do cargo',es:'Detalles del cargo'},now:{en:'Current role',pt:'Cargo atual',es:'Cargo actual'},present:{en:'Present',pt:'Atual',es:'Actual'},allStd:{en:'All',pt:'Todas',es:'Todas'},
  more2:{en:'Also completed',pt:'Também concluídos',es:'También completados'},hours:{en:'hours',pt:'horas',es:'horas'}
@@ -1388,7 +1403,7 @@ function initCB(){
   {const g=document.getElementById('ckTicks');if(g&&!g.childNodes.length){let h='';for(let i=0;i<24;i++){const a=i*15*Math.PI/180,r1=i%6?37.5:35,r2=40;h+=`<line x1="${(50+Math.sin(a)*r1).toFixed(2)}" y1="${(50-Math.cos(a)*r1).toFixed(2)}" x2="${(50+Math.sin(a)*r2).toFixed(2)}" y2="${(50-Math.cos(a)*r2).toFixed(2)}" stroke="${i>6&&i<18?'#0A1B2C':'rgba(244,247,251,.7)'}" stroke-width="${i%6?.9:1.6}"/>`}g.innerHTML=h}}
   const host=$('#cb3'),cvs=$('#cb3c');if(!window.THREE)return;
   const T=THREE,R=new T.WebGLRenderer({canvas:cvs,antialias:true,alpha:true,powerPreference:'high-performance'});
-  let DPR=Math.min(1.75,devicePixelRatio||1);const NOAD=location.hash==='#cbdebug-noadapt';R.setPixelRatio(DPR);R.shadowMap.enabled=true;R.shadowMap.type=T.PCFSoftShadowMap;
+  let DPR=Math.min(1.75,devicePixelRatio||1);const VID=location.hash==='#cbvideo',NOAD=VID||location.hash==='#cbdebug-noadapt';let MANUAL=false;R.setPixelRatio(DPR);R.shadowMap.enabled=true;R.shadowMap.type=T.PCFSoftShadowMap;
   const S=new T.Scene(),cam=new T.OrthographicCamera(-10,10,10,-10,-300,600);
   const hemi=new T.HemisphereLight(0xeef4ff,0x34472f,.8);S.add(hemi);
   const sun=new T.DirectionalLight(0xfff3dc,1.05);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);sun.shadow.bias=-.0004;
@@ -1423,7 +1438,7 @@ function initCB(){
       for(let c=1;c<4;c++){g.beginPath();g.moveTo(x,y+c*(h/2-3)/4);g.lineTo(x+mw-3,y+c*(h/2-3)/4);g.stroke()}}});
   const tGravel=tex(256,256,(g,w,h)=>{g.fillStyle='#8c8a84';g.fillRect(0,0,w,h);for(let i=0;i<5200;i++){const v=95+Math.floor(rnd()*95);g.fillStyle=`rgb(${v},${v-2},${v-6})`;g.beginPath();g.arc(rnd()*w,rnd()*h,.6+rnd()*1.6,0,6.3);g.fill()}},9,4.5);
   const tFence=tex(64,64,(g,w,h)=>{g.clearRect(0,0,w,h);g.strokeStyle='rgba(210,216,222,.9)';g.lineWidth=1.4;for(let k=-64;k<128;k+=8){g.beginPath();g.moveTo(k,0);g.lineTo(k+64,64);g.stroke();g.beginPath();g.moveTo(k+64,0);g.lineTo(k,64);g.stroke()}},30,1);
-  const tWin=tex(128,64,(g,w,h)=>{g.fillStyle='#e6e9ec';g.fillRect(0,0,w,h);g.fillStyle='#2b3a4a';[[10,18],[46,18],[82,18]].forEach(([x,y])=>g.fillRect(x,y,30,22));g.fillStyle='#5a6a7a';g.fillRect(112,14,12,50)});
+  const tWin=tex(128,64,(g,w,h)=>{g.fillStyle='#e6e9ec';g.fillRect(0,0,w,h);[[6,18],[42,18]].forEach(([x,y])=>{g.fillStyle='#9aa4ae';g.fillRect(x-2,y-2,34,26);g.fillStyle='#2b3a4a';g.fillRect(x,y,30,22);g.fillStyle='rgba(255,255,255,.18)';g.fillRect(x,y,30,6)});g.fillStyle='rgba(60,70,80,.22)';g.fillRect(0,h-5,w,5)});
   const tCab=tex(64,64,(g,w,h)=>{g.fillStyle='#d23b3b';g.fillRect(0,0,w,h);g.fillStyle='#1f2a36';g.fillRect(6,6,52,24);g.fillStyle='#e8e8e8';g.fillRect(10,40,44,4);g.fillRect(10,48,44,4)});
 
   /* ---------- ground, dirt, highway ---------- */
@@ -1503,12 +1518,31 @@ function initCB(){
   [-1.1,0,1.1].forEach(o=>S.add(new T.Line(new T.BufferGeometry().setFromPoints(sagLine(new T.Vector3(nearP,8.1,LZ+o),new T.Vector3(EX+o,8.35,EZ),.5)),wireM)));
 
   /* ---------- control building, PCS skids, parked car ---------- */
-  {const wm=new T.MeshStandardMaterial({map:tWin,roughness:.7}),plain=M(0xe6e9ec),m=[plain,plain,plain,plain,wm,plain];add(B(7.6,3.2,6.5),m,29.6,1.6,6.5);box(8,.2,6.9,M(0xcfd4d9),29.6,3.3,6.5);
-    const win=box(5.6,.6,.04,new T.MeshBasicMaterial({color:0x2b3a4a}),29,2.05,9.78,S,false);night.push(k=>win.material.color.set(k>.5?0xffd98a:0x2b3a4a))}
+  const CBX=29.6,CBZ=4.65,CBW=7.6,CBD=6.5,CBH=3.2,ZF=CBZ+CBD/2;   // front face at z = 7.9 (flush with the front BESS row)
+  {const wm=new T.MeshStandardMaterial({map:tWin,roughness:.7}),plain=M(0xe6e9ec),m=[plain,plain,plain,plain,wm,plain];add(B(CBW,CBH,CBD),m,CBX,CBH/2,CBZ);box(CBW+.4,.2,CBD+.4,M(0xcfd4d9),CBX,CBH+.1,CBZ);
+    const wins=[27.05,29.19].map(x=>box(1.74,1.1,.04,new T.MeshBasicMaterial({color:0x2b3a4a}),x,1.75,ZF+.03,S,false));
+    // double steel door (substation type): frame, two leaves with louvres, astragal, handles, warning plate, canopy, lamp, landing
+    const dg=new T.Group();dg.position.set(31.8,0,ZF);S.add(dg);
+    const leafM=M(0x9fb0a8,{metalness:.1,roughness:.65}),frameM=M(0x4a5560,{metalness:.15,roughness:.6}),slatM=M(0x74827c,{metalness:.1,roughness:.7}),chrome=M(0xe3e7ea,{metalness:.2,roughness:.4});
+    box(2.6,2.5,.12,frameM,0,1.25,.06,dg);
+    [-1,1].forEach(sd=>{box(1.12,2.3,.07,leafM,sd*.57,1.2,.14,dg);
+      for(let i=0;i<5;i++)box(.9,.045,.05,slatM,sd*.57,1.78+i*.1,.19,dg);          // upper louvres
+      for(let i=0;i<4;i++)box(.9,.045,.05,slatM,sd*.57,.32+i*.1,.19,dg);           // lower louvres
+      box(.03,.4,.05,chrome,sd*.13,1.1,.2,dg)});                                   // handles
+    box(.05,2.3,.05,frameM,0,1.2,.19,dg);
+    box(.26,.26,.012,M(0xf2c200),1.62,1.75,.01,dg);                                   // warning plate on the wall
+    box(3.2,.09,.95,frameM,0,2.78,.45,dg);                                            // canopy
+    box(3.4,.12,1.3,M(0xc9c9c4),0,.06,.65,dg);                                        // concrete landing
+    const lampM=new T.MeshBasicMaterial({color:0x8a8f96}),lamp=box(.32,.1,.16,lampM,0,2.68,.18,dg,false);lamp.userData.keep=true;
+    const gl=new T.Mesh(new T.CircleGeometry(2.1,28),new T.MeshBasicMaterial({color:0xffe2a6,transparent:true,opacity:0,blending:T.AdditiveBlending,depthWrite:false}));gl.rotation.x=-Math.PI/2;gl.position.set(0,.14,1.2);gl.userData.keep=true;dg.add(gl);
+    bake(dg);
+    night.push(k=>{wins.forEach(w=>w.material.color.set(k>.5?0xffd98a:0x2b3a4a));lampM.color.set(k>.5?0xfff1c0:0x8a8f96);gl.material.opacity=.2*k})}
   const skid=(x,z)=>{const g=new T.Group();g.position.set(x,0,z);S.add(g);box(6,.3,2.4,M(0x3d4550,{metalness:.4}),0,.2,0,g);
     const cab=new T.MeshStandardMaterial({map:tGrille,roughness:.55});[-1.9,-.6,.7].forEach(dx=>box(1.2,2.1,1.6,cab,dx,1.4,0,g));box(1.4,2.3,1.9,M(0xc9cfd6),2.1,1.5,0,g);box(6.1,.08,2.5,M(0xaab2bb),0,2.68,0,g);bake(g)};
   skid(-17.5,7.6);skid(-17.5,-6.4);
-  {const g=carModel(0xe8edf2).g,pk=lamps.pop();g.remove(pk.beam);g.remove(pk.vol);g.position.set(29.4,0,-4.2);g.rotation.y=Math.PI/2;S.add(g)}
+  {const park=(col,x,z,ry)=>{const c=carModel(col),pk=lamps.pop();c.g.remove(pk.beam);c.g.remove(pk.vol);c.g.position.set(x,0,z);c.g.rotation.y=ry;S.add(c.g)};
+    park(0xe8edf2,31.5,-3.6,0);   // nose-in against the east fence
+    park(0x2f5aa8,31.5,-6.5,0)}   // beside it, same orientation
 
   /* ---------- 20 ft liquid-cooled BESS container ---------- */
   const SLOTS=[];[6.6,1.4].forEach(z=>{for(let i=0;i<5;i++)SLOTS.push(new T.Vector3(-5.1+i*6.5,0,z))});
@@ -1588,7 +1622,7 @@ function initCB(){
     add(new T.SphereGeometry(.15,12,10),skin,0,1.37,0,g);add(new T.SphereGeometry(.18,12,8,0,Math.PI*2,0,Math.PI/2),helm,0,1.42,0,g);const br=add(new T.CylinderGeometry(.22,.22,.02,14),helm,0,1.42,0,g,false);
     g.scale.setScalar(1.25);g.traverse(o=>{if(o.isMesh)o.castShadow=true});S.add(g);return{g,legs,arms}}
   const W=[0,1,2,3,4,5].map(worker);
-  const walkers=[{a:[-12,0,-2],b:[24,0,-2],sp:.9},{a:[-12,0,4],b:[22,0,4],sp:.6},{a:[9.2,0,-4.4],b:[17,0,-4.4],sp:.7},{a:[-12,0,9.8],b:[24,0,9.8],sp:1}];
+  const walkers=[{a:[-12,0,-2],b:[24,0,-2],sp:.9},{a:[-12,0,4],b:[22,0,4],sp:.6},{a:[9.2,0,-4.4],b:[17,0,-4.4],sp:.7},{a:[-12,0,9.1],b:[24,0,9.1],sp:1}];
 
   /* ---------- floodlight towers (on at night): shadow-casting spots, volumetric beams, floating dust ---------- */
   const flM=new T.MeshBasicMaterial({color:0x6a6f76}),flOn=new T.MeshBasicMaterial({color:0xfff6d8});
@@ -1612,8 +1646,8 @@ function initCB(){
     fragmentShader:'uniform vec3 uCol;varying float vA;void main(){float d=length(gl_PointCoord-0.5);float s=smoothstep(0.5,0.0,d);gl_FragColor=vec4(uCol*(s*s*vA*1.15),1.0);}'});
   const NDUST=240,dust=[];
   // each tower aims its two lamps at a target: [x, z, target x, y, z]
-  const towers=[[-8,-10.6,-17.5,1.2,-6.4],[10,10.6,10,0,5.6],[24,-10.6,24,0,-5.6],[-25.3,11.3,-17,1.2,.6]],heads=[],fl=[],HY=9.2,_dn=new T.Vector3(0,-1,0),_fz=new T.Vector3(0,0,1);
-  towers.forEach(([x,z,tx,ty,tz])=>{cyl(.1,.16,9,steel,x,4.5,z);const yaw=Math.atan2(tx-x,tz-z),bar=box(2,.12,.12,steel,x,9,z,S,false);bar.rotation.y=yaw;
+  const towers=[[-8,-10.6,-17.5,1.2,-6.4,0],[-25.3,11.3,-17,1.2,.6,1],[-1.85,10.6,-1.85,.8,4,0],[17.65,10.6,17.65,.8,4,1],[18.3,-10.6,13,1.9,-7.5,1],[33.1,-11.1,31.2,.6,-5.1,0,.36]],heads=[],fl=[],HY=9.2,_dn=new T.Vector3(0,-1,0),_fz=new T.Vector3(0,0,1);
+  towers.forEach(([x,z,tx,ty,tz,sh,ang])=>{cyl(.1,.16,9,steel,x,4.5,z);const yaw=Math.atan2(tx-x,tz-z),bar=box(2,.12,.12,steel,x,9,z,S,false);bar.rotation.y=yaw;
     const hz=new T.Vector3(Math.sin(yaw),0,Math.cos(yaw)),px=new T.Vector3(Math.cos(yaw),0,-Math.sin(yaw));
     [-.6,.6].forEach(o=>{const at=new T.Vector3(x,HY,z).addScaledVector(px,o).addScaledVector(hz,.2),dir=new T.Vector3(tx,ty,tz).addScaledVector(px,o*.6).sub(at),len=dir.length()*1.08;dir.normalize();
       const h=box(.55,.4,.25,flM,at.x,at.y,at.z,S,false);h.quaternion.setFromUnitVectors(_fz,dir);heads.push(h);
@@ -1625,7 +1659,7 @@ function initCB(){
       const pts=new T.Points(dg,dm);pts.frustumCulled=false;pts.visible=false;pts.renderOrder=3;S.add(pts);dust.push(pts)});
     // one shadow-casting spot per tower, aimed like the lamps
     const tgt=new T.Vector3(tx,ty,tz),Lt=new T.Object3D();Lt.position.copy(tgt);S.add(Lt);
-    const L=new T.SpotLight(0xffe7b8,0,52,.52,.6,1.2);L.position.set(x,HY-.1,z).addScaledVector(hz,.25);L.target=Lt;L.castShadow=true;L.shadow.mapSize.set(512,512);L.shadow.bias=-.0006;L.shadow.camera.near=1;L.shadow.camera.far=48;L.visible=false;S.add(L);fl.push(L)});
+    const L=new T.SpotLight(0xffe7b8,0,52,ang||.52,.6,1.2);L.position.set(x,HY-.1,z).addScaledVector(hz,.25);L.target=Lt;L.castShadow=!!sh;L.shadow.mapSize.set(512,512);L.shadow.bias=-.0006;L.shadow.camera.near=1;L.shadow.camera.far=48;L.visible=false;S.add(L);fl.push(L)});
   night.push(k=>{heads.forEach(h=>h.material=k>.5?flOn:flM);FX.k.value=k;dust.forEach(d=>d.visible=k>.02);fl.forEach(L=>{L.intensity=3.8*k;L.visible=k>.02})});
 
   /* ---------- crane cycle: hook on the trailer, lift, slew, set, return; scene restarts after the back row ---------- */
@@ -1690,9 +1724,10 @@ function initCB(){
   const size=()=>{const r=host.getBoundingClientRect(),a=r.width/Math.max(1,r.height),v=a>1.6?50:a>1.1?60:76;cam.left=-v*a/2;cam.right=v*a/2;cam.top=v/2;cam.bottom=-v/2;cam.updateProjectionMatrix();R.setSize(r.width,r.height,false)};
   size();new ResizeObserver(size).observe(host);
   let last=performance.now(),t=0,acc=0,pN=0,pT=0;
-  function frame(now){requestAnimationFrame(frame);const raw=(now-last)/1000,dt=Math.min(.05,raw);last=now;if(!cbVisible)return;t+=dt;
+  function frame(now){requestAnimationFrame(frame);const raw=(now-last)/1000;last=now;if(MANUAL||!cbVisible)return;tick(Math.min(.05,raw),raw)}
+  function tick(dt,raw){t+=dt;
     // adaptive quality: if the first ~2 s run slow, render at a lower pixel ratio (and once more if still slow)
-    if(pN>=0&&raw<.5&&!NOAD){pN++;pT+=raw;if(pT>=2.5&&pN>=12){if(pT/pN>1/34&&DPR>.75){DPR=Math.max(.75,DPR>1.05?1:DPR*.75);R.setPixelRatio(DPR);size();if(fl[0].castShadow){fl.forEach(L=>L.castShadow=false);warm=true}pN=0;pT=0}else pN=-1}}
+    if(pN>=0&&raw<.5&&!NOAD){pN++;pT+=raw;if(pT>=2.5&&pN>=12){if(pT/pN>1/34&&DPR>.75){DPR=Math.max(.75,DPR>1.05?1:DPR*.75);R.setPixelRatio(DPR);size();if(fl.some(L=>L.castShadow)){fl.forEach(L=>L.castShadow=false);warm=true}pN=0;pT=0}else pN=-1}}
     if(auto)az=AZ0+Math.sin(t*.05)*.18;const D=140;cam.position.set(C.x+D*Math.cos(el)*Math.sin(az),D*Math.sin(el),C.z+D*Math.cos(el)*Math.cos(az));cam.lookAt(C);fitShadow();
     if(env.play){env.hour=(env.hour+dt*24/40)%24;acc+=dt;if(acc>.1){acc=0;ui.hour.value=env.hour;showVals()}applySun()}
     FX.time.value=t;FX.scale.value=cam.projectionMatrix.elements[5]*R.domElement.height/2;
@@ -1707,7 +1742,8 @@ function initCB(){
   let warm=false;function prewarm(){try{const h=env.hour;night.forEach(f=>f(1));fl.forEach(L=>L.intensity=.001);
       R.compile(S,cam);R.render(S,cam);env.hour=h;applySun()}catch(_){applySun()}}
   setTimeout(()=>{(window.requestIdleCallback||(f=>setTimeout(f,0)))(()=>{warm=true},{timeout:1200})},700);
-  requestAnimationFrame(frame);if(location.hash.startsWith('#cbdebug')){window.__cbS=S;window.__cbR=R;window.__cbMod=modM;window.__cbDPR=()=>DPR;window.__cbInfo=()=>({calls:R.info.render.calls,tris:R.info.render.triangles,geos:R.info.memory.geometries})}
+  requestAnimationFrame(frame);if(VID){window.__cbManual=b=>{MANUAL=!!b};window.__cbTick=d=>tick(d,d);window.__cbPrewarm=()=>prewarm()}
+  if(VID||location.hash.startsWith('#cbdebug')){window.__cbS=S;window.__cbR=R;window.__cbMod=modM;window.__cbDPR=()=>DPR;window.__cbInfo=()=>({calls:R.info.render.calls,tris:R.info.render.triangles,geos:R.info.memory.geometries})}
 }
 
 /* ---------- CONTACT FORM ---------- */
@@ -1741,6 +1777,7 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{const el=e.target;
     if(!el.matches('.scene'))io.unobserve(el)}
 }),{threshold:.3});
 $$('.hero,.act,.res,.scene,#manifesto').forEach(el=>io.observe(el));
+{const u=$('.uts');if(u){let tm=0;new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;u.classList.add('lit');clearTimeout(tm);tm=setTimeout(()=>u.classList.remove('lit'),3000)}),{threshold:.6}).observe(u)}}
 
 /* ---------- GUIDED SECTION SCROLL (ported from the previous site) ---------- */
 const panels=$$('main>section'),bar=$('.topbar'),motionBtn=$('#motion');let moving=false,lastMove=0,touchY=null,guided=true;
