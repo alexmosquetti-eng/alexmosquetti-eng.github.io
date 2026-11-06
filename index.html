@@ -363,7 +363,6 @@ main>section{min-height:calc(100svh - var(--nav))}
   .lg-m.row3 .lg-v{font-size:clamp(32px,9.4vw,42px)}
   .lg-l{font-size:10px;letter-spacing:.06em;margin-top:4px}
   .scene .credit{bottom:10px;font-size:8.5px}
-  .scene .credit--left{left:auto;right:max(24px,env(safe-area-inset-right,0px));text-align:right;bottom:26px}
 }
 @media (max-width:860px){.lg{grid-template-columns:1fr}.lg-m{grid-template-columns:repeat(3,minmax(0,1fr))}.lg-m.row3{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 18px}.lg-m.row3 .lg-v{font-size:clamp(32px,9vw,52px)}.lg-hero .lg-v{font-size:clamp(52px,14vw,80px)}.lg-v{font-size:clamp(32px,9vw,48px)}}
 
@@ -460,7 +459,8 @@ main>section{min-height:calc(100svh - var(--nav))}
 .clink .arr{transition:transform .3s var(--ease)}
 a.clink:hover .arr{transform:translateX(5px)}
 .cv-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-.scene .credit--left{right:auto;left:max(24px,env(safe-area-inset-left,0px));text-align:left}
+.contact .priv{margin:10px 0 0;padding-bottom:4px}
+@media (max-width:640px){.contact .priv{text-align:left}}
 .owner-note{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:200;background:#0A1B2C;color:#F4F7FB;border:1px solid var(--sun);padding:10px 16px;border-radius:2px;font:500 12.5px var(--mono);letter-spacing:.04em;box-shadow:0 8px 24px rgba(0,0,0,.35);transition:opacity .5s}
 .footer{margin-top:auto;padding-top:22px;padding-top:22px;border-top:1px solid var(--rule-night);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px;color:rgba(244,247,251,.5)}
 @media (max-width:900px){.contact h2,.contact .motto,.contact .avail,.clinks{grid-column:1/-1;grid-row:auto}.clinks{margin-top:40px}}
@@ -889,7 +889,7 @@ a.clink:hover .arr{transform:translateX(5px)}
         <div><span class="lg-v"><span class="pwr" data-w="1691400"><span class="v">0</span><span class="pre"></span><span class="base">W</span></span></span><span class="lg-l" data-en="Capacity · AC" data-pt="Potência · CA" data-es="Potencia · CA">Capacity · AC</span></div>
         <div><span class="lg-v"><span class="count" data-to="50">0</span></span><span class="lg-l" data-en="Charging systems" data-pt="Sistemas de recarga" data-es="Sistemas de recarga">Charging systems</span></div>
         <div><span class="lg-v"><span class="pwr" data-w="762200"><span class="v">0</span><span class="pre"></span><span class="base">W</span></span></span><span class="lg-l" data-en="Largest site · 103 units" data-pt="Maior projeto · 103 unidades" data-es="Mayor proyecto · 103 unidades">Largest site · 103 units</span></div></div></div>
-      <div class="credit priv" data-en="No cookies. Anonymous visit counts via GoatCounter." data-pt="Sem cookies. Contagem anônima de visitas via GoatCounter." data-es="Sin cookies. Recuento anónimo de visitas con GoatCounter.">No cookies. Anonymous visit counts via GoatCounter.</div><div class="credit credit--left" style="margin-top:14px"><a href="https://commons.wikimedia.org/wiki/File:Close-up_of_an_electric_car_charging_station.jpg" target="_blank" rel="noopener">Photo: Ivan Radic · CC BY 2.0 · extended</a></div>
+      <div class="credit" style="margin-top:14px"><a href="https://commons.wikimedia.org/wiki/File:Close-up_of_an_electric_car_charging_station.jpg" target="_blank" rel="noopener">Photo: Ivan Radic · CC BY 2.0 · extended</a></div>
       
     </div>
   </div>
@@ -968,6 +968,7 @@ a.clink:hover .arr{transform:translateX(5px)}
       </div>
     </div>
     <footer class="footer"><span>© 2026 Alexandre Mosquetti Ramalho de Castro</span><span data-en="Fortaleza · Brazil" data-pt="Fortaleza · Brasil" data-es="Fortaleza · Brasil">Fortaleza · Brazil</span></footer>
+    <p class="credit priv" data-en="No cookies. Anonymous visit counts via GoatCounter." data-pt="Sem cookies. Contagem anônima de visitas via GoatCounter." data-es="Sin cookies. Recuento anónimo de visitas con GoatCounter.">No cookies. Anonymous visit counts via GoatCounter.</p>
   </div>
 </section>
 </main>
