@@ -1968,11 +1968,15 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{const el=e.target;
     if(!el.matches('.scene'))io.unobserve(el)}
 }),{threshold:.3});
 $$('.hero,.act,.res,.scene,#manifesto').forEach(el=>io.observe(el));
-/* BESS teaser: the still gives way to a looping clip on hover (on touch screens, while the card is on screen) */
-if(has('.bt-card')&&!matchMedia('(prefers-reduced-motion: reduce)').matches){const cards=$$('.bt-card');
-  const on=c=>{const v=c.querySelector('.bt-vid');if(!v)return;const pr=v.play();if(pr&&pr.then)pr.then(()=>c.classList.add('playing')).catch(()=>{})},
-        off=c=>{const v=c.querySelector('.bt-vid');c.classList.remove('playing');if(v){v.pause()}};
-  const io2=new IntersectionObserver(es=>es.forEach(e=>e.intersectionRatio>.5?on(e.target):off(e.target)),{threshold:[0,.5,1]});cards.forEach(c=>io2.observe(c))}
+/* BESS teaser clips: play while the card is on screen. With "reduce motion" on (Windows animation effects off,
+   iOS/Android reduce motion) they do not start by themselves but still play on hover/focus. */
+if(has('.bt-card')){const cards=$$('.bt-card'),RMq=matchMedia('(prefers-reduced-motion: reduce)');
+  const on=c=>{const v=c.querySelector('.bt-vid');if(!v)return;v.muted=true;const go=()=>{const pr=v.play();if(pr&&pr.then)pr.then(()=>c.classList.add('playing')).catch(()=>{})};
+    if(v.readyState>=2)go();else{v.addEventListener('canplay',function f(){v.removeEventListener('canplay',f);if(c.__in)go()});v.load()}},
+        off=c=>{const v=c.querySelector('.bt-vid');c.classList.remove('playing');if(v)v.pause()};
+  const io2=new IntersectionObserver(es=>es.forEach(e=>{const c=e.target;c.__in=e.intersectionRatio>.35;if(RMq.matches)return;c.__in?on(c):off(c)}),{threshold:[0,.35,1]});
+  cards.forEach(c=>{io2.observe(c);c.addEventListener('mouseenter',()=>{c.__in=true;on(c)});c.addEventListener('focus',()=>{c.__in=true;on(c)});
+    c.addEventListener('mouseleave',()=>{if(RMq.matches)off(c)});c.addEventListener('blur',()=>{if(RMq.matches)off(c)})})}
 {const u=$('.uts');if(u){let tm=0;new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;u.classList.add('lit');clearTimeout(tm);tm=setTimeout(()=>u.classList.remove('lit'),3000)}),{threshold:.6}).observe(u)}}
 
 /* ---------- GUIDED SECTION SCROLL (ported from the previous site) ---------- */
