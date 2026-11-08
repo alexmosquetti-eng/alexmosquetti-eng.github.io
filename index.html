@@ -541,6 +541,7 @@ section[id]{scroll-margin-top:var(--nav)}
 .b-note{color:var(--on-night2);font-size:15px;max-width:96ch;min-height:3em;margin-top:-6px}
 .b-note b{color:#fff;font-weight:600}
 .bdays{gap:8px}
+.b-ctl{display:contents}
 .bdays button{border:1px solid var(--rule-night);background:none;cursor:pointer;border-radius:2px;padding:7px 12px;font:500 12px var(--mono);letter-spacing:.04em;color:var(--on-night2);transition:border-color .2s,color .2s,background .2s;display:inline-flex;gap:8px;align-items:center}
 .bdays button:hover{border-color:rgba(244,247,251,.5);color:#fff}
 .bdays button[aria-pressed="true"]{border-color:#fff;color:#fff;background:rgba(244,247,251,.06)}
@@ -611,17 +612,20 @@ section[id]{scroll-margin-top:var(--nav)}
 .tb-more span{font-size:13.5px;color:var(--muted)}
 @media (max-width:900px){.tb,.tb-more{grid-template-columns:1fr}.tb-hero,.tb-hero+.tb-hero{padding:24px 0;border-left:0;border-bottom:1px solid var(--rule)}}
 
-/* BESS · ultrawide 21:9 — everything on one screen */
+/* BESS · ultrawide 21:9 — everything on one screen: copy | 3D | daily chart on top; figures | strategies | payback below */
 @media (min-width:1500px) and (min-aspect-ratio:11/5){
   #bess>.wrap{width:100%;padding-left:max(24px,4vw);padding-right:max(24px,4vw)}
-  .bess-in{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.25fr) minmax(0,1.05fr);column-gap:clamp(28px,2.4vw,52px);row-gap:10px;height:calc(100svh - var(--nav));min-height:900px;padding-block:44px 32px;
-    grid-template-areas:"top top top" "copy bar chart" "copy note chart" "copy days chart" "specs b3 pay" "annual b3 pay";grid-template-rows:auto auto auto auto minmax(0,1fr) auto}
+  .bess-in{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.25fr) minmax(0,1.05fr);column-gap:clamp(28px,2.4vw,52px);row-gap:12px;height:calc(100svh - var(--nav));min-height:900px;padding-block:40px 30px;
+    grid-template-areas:"top top top" "copy b3 chart" "specs ctl pay" "annual ctl pay";grid-template-rows:auto minmax(0,1fr) auto auto}
+  .b-ctl{grid-area:ctl;display:flex;flex-direction:column;gap:12px;align-self:start;min-width:0}
   .b-head,.b-lab,.b-foot{display:contents}
-  .bess-in>.scene-top{grid-area:top}.b-copy{grid-area:copy;align-self:start}.b-specs{grid-area:specs;align-self:end}
-  .b-bar{grid-area:bar;margin:0;align-self:end}.b-note{grid-area:note;min-height:0;margin:0}.bdays{grid-area:days;align-self:start}
+  .bess-in>.scene-top{grid-area:top}.b-copy{grid-area:copy;align-self:start}.b-specs{grid-area:specs;align-self:start;margin-top:14px}
+  .b-bar{margin:14px 0 0}.b-note{min-height:0;margin:0}.bdays{margin-top:2px}
   .b3{grid-area:b3;min-height:0;height:auto;align-self:stretch;border:1px solid var(--rule-night)}
   .b-copy p{font-size:15px}.b-copy h2{margin:8px 0 12px}.b-link{margin-top:12px}.b-note{font-size:14px}
-  .bchart{grid-area:chart;padding:0;align-self:start}.b-annual{grid-area:annual}.b-pay{grid-area:pay;align-self:end}
+  .bchart{grid-area:chart;padding:0;align-self:stretch;min-height:0;justify-content:space-between}.b-annual{grid-area:annual;align-self:start}
+  .b-pay{grid-area:pay;align-self:start;margin-top:-16px}
+  .b-pay>.eyebrow{display:block;font-size:12px;line-height:1.3em;height:1.3em}
   .b-copy h2{font-size:clamp(44px,4vw,76px)}.b-specs dd .num{font-size:clamp(34px,2.6vw,52px)}.b-specs div{padding:10px 0 12px}
   .b-annual dl div{padding:8px 0 10px}.b-annual dd .num{font-size:clamp(28px,2vw,40px)}.b-annual .eyebrow{display:none}
   .b-annual dl{margin-top:0;border-top:0}
@@ -999,14 +1003,14 @@ section[id]{scroll-margin-top:var(--nav)}
     <p class="bt-hook" data-en="From a home battery modelled hour by hour to a utility-scale site under construction. Pick one and explore it in 3D." data-pt="De uma bateria residencial modelada hora a hora a uma usina utility-scale em obra. Escolha um projeto e explore em 3D." data-es="De una batería residencial modelada hora a hora a una planta utility-scale en obra. Elija un proyecto y explórelo en 3D.">From a home battery modelled hour by hour to a utility-scale site under construction. Pick one and explore it in 3D.</p>
     <div class="bt-cards">
       <a class="bt-card" href="bess.html#residential">
-        <span class="bt-img"><video class="bt-vid" muted loop playsinline preload="auto" aria-hidden="true" tabindex="-1"><source src="assets/bess-res-loop.mp4" type="video/mp4"></video><img src="assets/bess-res-still.webp" alt="3D model of a house with rooftop PV and a home battery" width="1200" height="750" loading="lazy" decoding="async"></span>
+        <span class="bt-img"><video class="bt-vid" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"><source src="assets/bess-res-loop.mp4" type="video/mp4"></video><img src="assets/bess-res-still.webp" alt="3D model of a house with rooftop PV and a home battery" width="1200" height="750" loading="lazy" decoding="async"></span>
         <span class="bt-body"><span class="eyebrow eyebrow--sun" data-en="Undergraduate thesis · UFC · 2024" data-pt="TCC · UFC · 2024" data-es="Trabajo de fin de grado · UFC · 2024">Undergraduate thesis · UFC · 2024</span>
           <b data-en="Residential BESS design" data-pt="Projeto de BESS residencial" data-es="Proyecto de BESS residencial">Residential BESS design</b>
           <span class="bt-figs"><span><em data-n="7.68" data-d="2">7.68</em> kWh LFP</span><span><em>3</em> <span data-en="dispatch strategies" data-pt="estratégias de despacho" data-es="estrategias de despacho">dispatch strategies</span></span><span><em>≈<span data-n="4.7" data-d="1">4.7</span></em> <span data-en="yr payback" data-pt="anos de retorno" data-es="años de retorno">yr payback</span></span></span>
           <span class="bt-cta"><span data-en="Open the project" data-pt="Ver o projeto" data-es="Ver el proyecto">Open the project</span><span class="arr">→</span></span></span>
       </a>
       <a class="bt-card" href="bess.html#commercial">
-        <span class="bt-img"><video class="bt-vid" muted loop playsinline preload="auto" aria-hidden="true" tabindex="-1"><source src="assets/bess-com-loop.mp4" type="video/mp4"></video><img src="assets/bess-com-still.webp" alt="3D construction site of a commercial battery storage plant at night, with floodlights" width="1200" height="750" loading="lazy" decoding="async"><span class="bt-badge" data-en="Under construction" data-pt="Em construção" data-es="En construcción">Under construction</span></span>
+        <span class="bt-img"><video class="bt-vid" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"><source src="assets/bess-com-loop.mp4" type="video/mp4"></video><img src="assets/bess-com-still.webp" alt="3D construction site of a commercial battery storage plant at night, with floodlights" width="1200" height="750" loading="lazy" decoding="async"><span class="bt-badge" data-en="Under construction" data-pt="Em construção" data-es="En construcción">Under construction</span></span>
         <span class="bt-body"><span class="eyebrow eyebrow--sun" data-en="Coming next" data-pt="Próximo passo" data-es="Próximo paso">Coming next</span>
           <b data-en="Commercial &amp; utility-scale BESS" data-pt="BESS comercial e utility-scale" data-es="BESS comercial y utility-scale">Commercial &amp; utility-scale BESS</b>
           <span class="bt-figs"><span data-en="AC- &amp; DC-coupled" data-pt="Acoplado em CA e CC" data-es="Acoplado en CA y CC">AC- &amp; DC-coupled</span><span data-en="Liquid cooling" data-pt="Refrigeração líquida" data-es="Refrigeración líquida">Liquid cooling</span><span>PCS · SCADA</span></span>
@@ -1442,7 +1446,7 @@ function bMorph(){
   cAnim=requestAnimationFrame(f);
 }
 function drawChart(){
-  const box=$('#bChart'),Wd=Math.max(300,box.clientWidth),UW=matchMedia('(min-width:1500px) and (min-aspect-ratio:11/5)').matches,Ht=Math.round(Math.min(UW?innerHeight*.3:420,Math.max(UW?220:280,Wd*.5))),m={l:46,r:40,t:30,b:28},iw=Wd-m.l-m.r,ih=Ht-m.t-m.b,sl=iw/24;
+  const box=$('#bChart'),Wd=Math.max(300,box.clientWidth),UW=matchMedia('(min-width:1500px) and (min-aspect-ratio:11/5)').matches,Ht=UW?Math.max(240,Math.round(($('#b3')?$('#b3').clientHeight:500)-($('#bLeg')?$('#bLeg').offsetHeight:60)-30)):Math.round(Math.min(420,Math.max(280,Wd*.5))),m={l:46,r:40,t:30,b:28},iw=Wd-m.l-m.r,ih=Ht-m.t-m.b,sl=iw/24;
   const X=i=>m.l+sl*(i+.5),Y=v=>m.t+ih-(v/cvMax)*ih,Ys=v=>m.t+ih-v*ih;
   const st=cvMax>3000?1000:500;let g='';
   for(let v=0;v<=cvMax+1;v+=st){g+=`<line class="gl" x1="${m.l}" x2="${m.l+iw}" y1="${Y(v)}" y2="${Y(v)}"/><text class="ax" x="${m.l-8}" y="${Y(v)+4}" text-anchor="end">${nf(v/1000,1)}</text>`}
@@ -1483,6 +1487,7 @@ $('#bPlay').onclick=()=>setPlay(!BS.playing);
 let bVisible=false;new IntersectionObserver(es=>es.forEach(e=>{bVisible=e.isIntersecting;if(bVisible&&!window.__b3)initB3()}),{threshold:.15}).observe($('#bess'));
 setInterval(()=>{if(BS.playing&&bVisible){BS.hour=(BS.hour+1)%24;bTick()}},850);
 let brz;addEventListener('resize',()=>{clearTimeout(brz);brz=setTimeout(drawChart,120)});
+if(window.ResizeObserver&&$('#b3'))new ResizeObserver(()=>{if(matchMedia('(min-width:1500px) and (min-aspect-ratio:11/5)').matches){clearTimeout(brz);brz=setTimeout(drawChart,120)}}).observe($('#b3'));
 
 /* payback table + chart */
 function bPayback(){
@@ -1974,6 +1979,7 @@ if(has('.bt-card')){const cards=$$('.bt-card'),RMq=matchMedia('(prefers-reduced-
   const on=c=>{const v=c.querySelector('.bt-vid');if(!v)return;v.muted=true;const go=()=>{const pr=v.play();if(pr&&pr.then)pr.then(()=>c.classList.add('playing')).catch(()=>{})};
     if(v.readyState>=2)go();else{v.addEventListener('canplay',function f(){v.removeEventListener('canplay',f);if(c.__in)go()});v.load()}},
         off=c=>{const v=c.querySelector('.bt-vid');c.classList.remove('playing');if(v)v.pause()};
+  const pre=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const v=e.target.querySelector('.bt-vid');if(v&&v.preload!=='auto'){v.preload='auto';v.load()}pre.unobserve(e.target)}}),{rootMargin:'600px 0px'});cards.forEach(c=>pre.observe(c));
   const io2=new IntersectionObserver(es=>es.forEach(e=>{const c=e.target;c.__in=e.intersectionRatio>.35;if(RMq.matches)return;c.__in?on(c):off(c)}),{threshold:[0,.35,1]});
   cards.forEach(c=>{io2.observe(c);c.addEventListener('mouseenter',()=>{c.__in=true;on(c)});c.addEventListener('focus',()=>{c.__in=true;on(c)});
     c.addEventListener('mouseleave',()=>{if(RMq.matches)off(c)});c.addEventListener('blur',()=>{if(RMq.matches)off(c)})})}
@@ -1990,13 +1996,19 @@ function goPanel(target){if(!target)return;const to=Math.max(0,target.getBoundin
   const f=now=>{if(st===undefined)st=now;const k=Math.min(1,(now-st)/dur),e=k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2;scrollTo(0,from+dist*e);if(k<1)requestAnimationFrame(f);else{scrollTo(0,to);moving=false;edgeP=target;edgeT[1]=0;edgeT[-1]=performance.now()-DWELL}};requestAnimationFrame(f)}
 // sections taller than the screen: once their bottom (or top) comes into view the visitor gets a short hold before the next jump
 const DWELL=450,edgeT={1:0,'-1':0};let edgeP=null,hintT=0;
-const isLong=p=>p.getBoundingClientRect().height>innerHeight-bar.offsetHeight+60;
+const isLong=p=>p.getBoundingClientRect().height>innerHeight-bar.offsetHeight+60,TOUCHY=matchMedia('(pointer: coarse)').matches;
 const hintEl=document.createElement('div');hintEl.className='edge-hint';hintEl.setAttribute('aria-hidden','true');document.body.appendChild(hintEl);
 const hint=dir=>{hintEl.textContent=dir>0?'↓':'↑';hintEl.classList.toggle('up',dir<0);hintEl.classList.remove('show');void hintEl.offsetWidth;hintEl.classList.add('show');clearTimeout(hintT);hintT=setTimeout(()=>hintEl.classList.remove('show'),DWELL+650)};
 let lastIn=0;['wheel','touchmove','touchend','keydown'].forEach(ev=>addEventListener(ev,()=>{lastIn=performance.now()},{passive:true}));
 // inside a long section, scrolling stops exactly at its bottom/top (the next section never peeks in); the hold below then applies
 const clampEdge=()=>{if(!edgeP||!isLong(edgeP)||performance.now()-lastIn>1200)return;const r=edgeP.getBoundingClientRect(),hd=bar.getBoundingClientRect().height,i=panels.indexOf(edgeP);
-  if(r.bottom<innerHeight-1&&panels[i+1])scrollTo(0,scrollY-(innerHeight-r.bottom));else if(r.top>hd+1&&i>0)scrollTo(0,scrollY+(r.top-hd))};
+  let to=null;if(r.bottom<innerHeight-1&&panels[i+1])to=scrollY-(innerHeight-r.bottom);else if(r.top>hd+1&&i>0)to=scrollY+(r.top-hd);
+  if(to===null)return;if(TOUCHY){freeze(to);return}scrollTo(0,to)};
+// touch screens: momentum can't be cancelled from a scroll handler (pulling back each frame makes the page shake),
+// so the page is frozen once at the exact edge for the hold, then released
+let frzT=0,frozen=false;
+function freeze(y){if(frozen)return;frozen=true;const h=document.documentElement,bd=document.body;h.style.overflow=bd.style.overflow='hidden';h.style.touchAction='none';scrollTo(0,y);
+  clearTimeout(frzT);frzT=setTimeout(()=>{h.style.overflow=bd.style.overflow='';h.style.touchAction='';frozen=false},DWELL)}
 addEventListener('scroll',()=>{if(moving||!guided)return;clampEdge();const cur=currentPanel();if(cur!==edgeP){edgeP=cur;edgeT[1]=edgeT[-1]=0}
   if(!isLong(cur))return;const r=cur.getBoundingClientRect(),hd=bar.getBoundingClientRect().height,now=performance.now();
   if(r.bottom<=innerHeight+42){if(!edgeT[1]&&panels[panels.indexOf(cur)+1]){edgeT[1]=now;hint(1)}}else edgeT[1]=0;
